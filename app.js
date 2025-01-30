@@ -81,17 +81,17 @@ function numClick(num) {
     } else if (!operator && !num2 && ((num1 + '').length < 6)) { //If the first number does exist and isn't too long, add a number to it
         num1 = (num1 + "" + num);
         setCalculatorScreen(num1);
-    } else if (num1 && operator && !num2 && !(num2==0)) { //If the second number doesn't exist, set it
+    } else if ((num1 || (num1==0)) && operator && !num2 && !(num2==0)) { //If the second number doesn't exist, set it
         num2 = num;
         setCalculatorScreen(num2);
-    } else if (num1 && operator && ((num2 + '').length < 6)) { //if the second number does exist and isn't too long, add to it
+    } else if ((num1 || (num==0)) && operator && ((num2 + '').length < 6)) { //if the second number does exist and isn't too long, add to it
         num2 = (num2 + "" + num);
         setCalculatorScreen(num2);
     }
 }
 
 function decimal() { //Adds a decimal point to the current number
-    if (!(num1+'')) { //If the first number doesn't exist, set to '0.1'
+    if (!(num1)) { //If the first number doesn't exist, set to '0.1'
         numClick('0.');
     } else if (!operator && !(num2)) { //If the first number does exist and is still in focus
         if (!((num1 + '').includes('.'))) //If the number doesn't already have a decimal point
@@ -105,14 +105,14 @@ function decimal() { //Adds a decimal point to the current number
 }
 
 function opClick(op) { //Sets operator
-    if ((num1+'') && !num2) { //If the first number has been selected and the second hasn't
+    if ((num1 || (num1==0)) && !num2) { //If the first number has been selected and the second hasn't
         operator = op;
         setCalculatorScreen(operator);
     }
 }
 
 function enter() { //If the enter button is clicked
-    if ((num1+'') && operator && (num2+'')) { //If there is a first number, an operator, and a second number
+    if ((num1 || (num1==0)) && operator && (num2 || (num2==0))) { //If there is a first number, an operator, and a second number
         doMath();
     }
 }
