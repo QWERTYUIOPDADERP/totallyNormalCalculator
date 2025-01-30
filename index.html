@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <a id="usePrompt" onclick="beginPrompts()"> Use Prompt </a>
+    <div id="calc">
+        <div id="numbers">
+            <h1 id="screen">000000</h1>
+        </div>
+        <div id="row">
+            <div id="grid">
+                <div class="num" onclick="numClick(1)">1</div>
+                <div class="num" onclick="numClick(2)">2</div>
+                <div class="num" onclick="numClick(3)">3</div>
+                <div class="num" onclick="numClick(4)">4</div>
+                <div class="num" onclick="numClick(5)">5</div>
+                <div class="num" onclick="numClick(6)">6</div>
+                <div class="num" onclick="numClick(7)">7</div>
+                <div class="num" onclick="numClick(8)">8</div>
+                <div class="num" onclick="numClick(9)">9</div>
+                <div class="num" onclick="numClick(0)">0</div>
+                <div class="num" onclick="decimal()">.</div>
+            </div>
+            <div id="operators">
+                <div class="num op" onclick="opClick('+')">+</div>
+                <div class="num op" onclick="opClick('-')">-</div>
+                <div class="num op" onclick="opClick('*')">*</div>
+                <div class="num op" onclick="opClick('/')">/</div>
+                <div class="num op" onclick="opClick('^')">^</div>
+                <div class="num op" onclick="enter()">Enter</div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js">
+
+    </script>
+</body>
+</html>
